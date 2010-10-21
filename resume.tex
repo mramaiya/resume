@@ -32,6 +32,17 @@ Responsibilities:
 	\end{list}
 }
 
+\newcommand{\otherlist}[2]{
+#1:
+	\begin{list}{$\bullet$}{
+		\setlength{\itemsep}{0.0in}
+		\setlength{\parsep}{0in} \setlength{\parskip}{0in}
+		\setlength{\topsep}{0.0in} \setlength{\partopsep}{0in}
+		\setlength{\leftmargin}{0.17in}}
+		#2 
+	\end{list}
+}
+
 \newcommand{\at}[3]{ \\ \makebox[2.75in][l]{#1} \makebox[2in][l]{#2} \hfill #3}
 \newcommand{\job}[4]{ {\bf #1}\at{#2}{#3}{#4}}
 
@@ -49,7 +60,6 @@ Responsibilities:
 todo
 
 \section{\sc Education}
-
 \job{M.S., Neural Engineering}{Dec 2010}{University of Illinois at Chicago}{Chicago, IL}
 
 \job{B.S., Applied Mathematics}{May 2005}{Florida Institute of Technology}{Melbourne, FL}
@@ -62,6 +72,10 @@ todo
 \jobdescription{todo}
 
 \jobduties{\item todo}
+
+\otherlist{Awards}{\item 2010 InformationWeek 500 for innovation in business technology
+	\item 2010 Springy Awards, Best Web Application
+}
 
 \job{Research Assistant}{Jan 2009 - July 2010}{Rehabilitation Institute of Chicago}{Chicago, IL}
 
