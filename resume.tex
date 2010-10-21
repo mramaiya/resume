@@ -2,9 +2,6 @@
 
 \usepackage{comment}
 
-\ifcsname ifresume\endcsname
-\else \expandafter\let\csname ifresume\expandafter\endcsname \csname iftrue\endcsname \fi
-
 \oddsidemargin -.5in
 \evensidemargin -.5in
 \textwidth=6.0in
@@ -14,7 +11,6 @@
 \begin{document}
 
 \newcommand{\jobdescription}[1]{
-	\ifresume
 Description:
 	\begin{list}{}{
 		\setlength{\itemsep}{0.0in}
@@ -23,11 +19,9 @@ Description:
 		\setlength{\leftmargin}{0.17in}}
 		\item #1 
 	\end{list}
-	\fi
 }
 	
 \newcommand{\jobduties}[1]{
-	\ifresume
 Responsibilities:
 	\begin{list}{$\bullet$}{
 		\setlength{\itemsep}{0.0in}
@@ -36,7 +30,6 @@ Responsibilities:
 		\setlength{\leftmargin}{0.17in}}
 		#1
 	\end{list}
-	\fi
 }
 
 \newcommand{\at}[3]{ \\ \makebox[2.75in][l]{#1} \makebox[2in][l]{#2} \hfill #3}
@@ -46,18 +39,14 @@ Responsibilities:
 
 \begin{resume}
 
-\ifresume
-	\section{\sc Contact}
-	\makebox[2.75in][l]{2701 N Southport Ave}
-	\makebox[2in][l]{Voice: (773) 576-8077}\\
-	\makebox[2.75in][l]{Chicago, IL 60614}
-	\makebox[2in][l]{Email: milan.ramaiya@gmail.com}
-\fi
+\section{\sc Contact}
+\makebox[2.75in][l]{2701 N Southport Ave}
+\makebox[2in][l]{Voice: (773) 576-8077}\\
+\makebox[2.75in][l]{Chicago, IL 60614}
+\makebox[2in][l]{Email: milan.ramaiya@gmail.com}
 
-\ifresume
-	\section{\sc Overview}
-	todo
-\fi
+\section{\sc Overview}
+todo
 
 \section{\sc Education}
 
@@ -180,14 +169,12 @@ Greene A., Ramaiya M., Rousche P.J., Patton J.L. (2009) A system for simultaneou
 \section{\sc Conference Proceedings}
 Greene AV, Ramaiya M, Rousche PJ, Patton JL, A System for Simultaneous Neural Recording and Spatial Forelimb Tracking During Robot Rehabilitation BMES society.
 
-\ifresume
 \section{\sc Other Projects}
 \job{Tiger compiler}{Jan - Jun 2002}{Florida Institute of Technology}{Melbourne, FL} \\
 I was tasked with creating a Sparc compiler (in Java) for Tiger, a Pascal-style language. In the process of six months, I had to learn Sparc assembly and develop each part of the compiler: the lexer, parser, syntax checking, type checking, instruction selection, register allocation, etc. In the process of doing so, I properly learned the necessity of separating otherwise separate parts of any system, as well as heavy algorithm usage.
  
 \job{SwarmLinda}{Oct 2002 - Jun 2003}{Florida Institute of Technology}{Melbourne, FL} \\
 As part of my senior design project, we created a distributed memory system mirroring swarm behavior. In the process we managed multi-threaded servers with multiple TCP/IP connections and resource management of data, and algorithms to prevent network overload.
-\fi
 
 \end{resume}
 \end{document}
