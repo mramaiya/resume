@@ -1,0 +1,193 @@
+\documentclass[margin,line]{res}
+
+\usepackage{comment}
+
+\ifcsname ifresume\endcsname
+\else \expandafter\let\csname ifresume\expandafter\endcsname \csname iftrue\endcsname \fi
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.0in
+\itemsep=0in
+\parsep=0in
+
+\begin{document}
+
+\newcommand{\jobdescription}[1]{
+	\ifresume
+Description:
+	\begin{list}{}{
+		\setlength{\itemsep}{0.0in}
+		\setlength{\parsep}{0in} \setlength{\parskip}{0in}
+		\setlength{\topsep}{0.0in} \setlength{\partopsep}{0in}
+		\setlength{\leftmargin}{0.17in}}
+		\item #1 
+	\end{list}
+	\fi
+}
+	
+\newcommand{\jobduties}[1]{
+	\ifresume
+Responsibilities:
+	\begin{list}{$\bullet$}{
+		\setlength{\itemsep}{0.0in}
+		\setlength{\parsep}{0in} \setlength{\parskip}{0in}
+		\setlength{\topsep}{0.0in} \setlength{\partopsep}{0in}
+		\setlength{\leftmargin}{0.17in}}
+		#1
+	\end{list}
+	\fi
+}
+
+\newcommand{\at}[3]{ \\ \makebox[2.75in][l]{#1} \makebox[2in][l]{#2} \hfill #3}
+\newcommand{\job}[4]{ {\bf #1}\at{#2}{#3}{#4}}
+
+\name{Milan Ramaiya \vspace*{.1in}}
+
+\begin{resume}
+
+\ifresume
+	\section{\sc Contact}
+	\makebox[2.75in][l]{2701 N Southport Ave}
+	\makebox[2in][l]{Voice: (773) 576-8077}\\
+	\makebox[2.75in][l]{Chicago, IL 60614}
+	\makebox[2in][l]{Email: milan.ramaiya@gmail.com}
+\fi
+
+\ifresume
+	\section{\sc Overview}
+	todo
+\fi
+
+\section{\sc Education}
+
+\job{M.S., Neural Engineering}{Dec 2010}{University of Illinois at Chicago}{Chicago, IL}
+
+\job{B.S., Applied Mathematics}{May 2005}{Florida Institute of Technology}{Melbourne, FL}
+
+\job{B.S., Computer Science}{Dec 2003}{Florida Institute of Technology}{Melbourne, FL}
+
+\section{\sc Employment}
+\job{Senior Developer}{Jan 2010 - present}{Inkchaser}{Chicago, IL}
+
+\jobdescription{todo}
+
+\jobduties{\item todo}
+
+\job{Research Assistant}{Jan 2009 - July 2010}{Rehabilitation Institute of Chicago}{Chicago, IL}
+
+\jobdescription{todo}
+
+\jobduties{\item todo}
+
+\job{Senior Developer}{Dec 2007 - Jan 2010}{Innerworkings}{Chicago, IL}
+
+\jobdescription{todo}
+
+\jobduties{\item todo}
+
+\job{Senior Developer}{Sep 2006 - Dec 2007}{Quickset}{Northbrook, IL}
+
+\jobdescription{
+Quickset specializes in creating pan and tilt systems. Pan and tilt systems are robotic systems, which pan (horizontally) and tilt (vertically). They are most prevalent in security systems. In addition to creating off-the-shelf hardware, Quickset also provides integration between pan/tilts and attachable devices (cameras, floodlights, A/V, etc.) The software team is in charge of developing everything from the backend protocol implementation to the user interface that each client requests.
+When I joined Quickset, their software had grown to become bloated and unstable and was a maintenance nightmare. It was my duty to create a new architecture that would be easily maintainable, as well as scalable, while, at the same time, fulfilling customer requests that were taking place.
+I designed a three-tiered architecture to support a variety of devices on the backend, a variety of user interfaces on the frontend, and an abstract communication layer between the two.
+}
+
+\jobduties{
+\item Designed UML diagrams to define the architecture and display control flow between the different layers.
+\item Developed an n-tier architecture to support easily interchangeable layers.
+\item Implemented a highly managed multi-threaded backend, with support for unloading and reloading of devices during runtime.
+\item Designed and developed the common frontend layer using an MVC pattern to allow multiple user interfaces (ie: a Swing GUI and custom hardware controller) to be interoperable with a single source of data.
+\item Used Factory pattern to easily create devices with otherwise highly specific parameters.
+\item Used Decorator pattern to attach functionality to devices only when necessary.
+\item Implemented a rich Swing user interface, using custom TableCellRenderers, custom LayoutManagers, Drag and Drop support, and completely custom components using Graphics2D (ie: radial aircraft-style gauges and seven-segment displays).
+\item Debugged multi-threading problems, including race conditions and deadlocks.
+\item Used Interfaces to define a communication layer to allow the same Swing GUI to be used as either a thick or thin client.
+\item Developed thread-safe implementations of synchronous and asynchronous protocols.
+\item Used Collections, Map, and concurrent Frameworks in numerous locations inside the applications thread-safe data storage.
+\item Designed multiple implementations of the communication layer using MantaRay JMS, a custom TCP/IP protocol, and web application.
+\item Created a clean and fast web controller using AJAX, JSP, and servlets with an Apache Tomcat server.
+\item Created JUnit test cases and ANT build scripts.
+\item Developed lightweight and fast applications to be deployed onto embedded Linux systems.
+\item Used Java 1.5 varargs and Generics to allow for highly extensible objects.
+\item Used Apache Logging for debugging and logging errors.
+\item Used Java JNI to communicate with drivers and to embed Windows Media Player into a Java application to display streaming video from cameras.
+\item Used Java Media Framework to transcode audio to be streamed to a speaker mounted on a pan/tilt.
+\item Used Java Reflections and Annotations in order to allow dynamically created user interfaces for objects and plugins.
+\item Read and wrote XML configuration files.
+\item Used jhat and a variety of other tools to detect memory leaks.
+\item Used Eclipse for developing and debugging.
+\item Used CVS for versioning control.
+\item Conferred with clients for requirements analysis.
+\item Traveled to clients’ sites for delivery, installation, demo, and troubleshooting.
+}
+
+\job{Proprietor}{Jun 2005 - Aug 2006}{Manual Supply}{Melbourne, FL}
+
+\jobdescription{Manual Supply was a business I had created which sold CDs via the internet and primarily eBay. I had acquired a Primera disc publisher that could create and label CDs and an internet postage printer. I created software to automate the entire process.}
+
+\jobduties{
+\item Used XML over TCP/IP to communicate with eBay Auction Management services to retrieve open orders and update statuses.
+\item Used XML to communicate with Endicia internet postage and Dazzle postage printer to calculate and print proper amount of postage for each package.
+\item Used a proprietary protocol to communicate with Primera Bravo Disc Publisher to automate creation of CDs.
+\item Designed a rich Swing user interface using custom ListCellRenderers and custom components to display the processing status of orders, and allow user to update status.
+\item Integrating all portions to completely automate order processing and fulfillment.
+}
+
+\job{Developer}{Jan 2004 - Jun 2005}{Ensco}{Melbourne, FL}
+
+\jobdescription{Ensco, Inc, is a Department of Defense contractor that specializes in mapping and meteorology software.}
+
+\jobduties {
+\item Worked in an Extreme Programming environment to develop a variety of platform-independent, field-deployed, and mission-critical software.
+\item Used Agile methodology and test-driven development to create software.
+\item Created rigorous JUnit tests and ANT scripts for automated builds and nightly regression testing.
+\item Accessed MySQL databases using JDBC.
+\item Created and executed SQL queries, statements, and stored procedures.
+\item Used Collections and Map frameworks to store and update data.
+\item Debugged multi-threading problems, including race conditions and deadlocks.
+\item Used GridBagLayout, as well as custom LayoutManagers in Swing applications.
+\item Created custom Swing UI components for use in the company toolkit.
+\item Created webapps with Apache Tomcat, JSP, and servlets.
+\item Used SpatialFX to create a thick client Swing mapping system.
+\item Used JBuilder for editing and debugging.
+\item Used CVS for versioning control.
+\item Met with clients for requirements analysis and demos in the process of development.
+}
+
+\job{Developer}{Oct 2002 - Dec 2003}{Florida Institute of Technology}{Melbourne, FL}
+
+\jobduties{
+\item Worked in a team to develop a full-featured, modular x86/Win32 debugger in C++.
+\item Designed and developed the API interface debugger/UI communication.
+}
+
+\job{Test Engineer/Intern}{Jan 2002 - Sep 2002}{GE Transportation Systems}{Melbourne, FL}
+
+\jobduties{
+\item Conferred with clients to create use cases that met customer requirements.
+\item Created and executed WinRunner test scripts to meet use case specification.
+}
+
+\section{\sc Publications}
+Ramaiya M. {\em A Haptic/Graphic Paradigm for the Rehabilitation of Attention in Severe Traumatic Brain Injury}. Master's Thesis. March 2010.
+
+Ramaiya M., Dvorkin A.Y., Zollman F.S., Larson E., Davitt L., Pacini S., Beck K., Patton J.L. (2009) Assessing and improving attention in TBI patients using Virtual Reality environments with haptic robots. Neuroscience Meeting, Chicago IL, {\em Society for Neuroscience}, October 2009
+
+Greene A., Ramaiya M., Rousche P.J., Patton J.L. (2009) A system for simultaneous neural recording and spatial forelimb tracking during robot rehabilitation. Neuroscience Meeting, Chicago IL, {\em Society for Neuroscience}, October 2009.
+
+\section{\sc Conference Proceedings}
+Greene AV, Ramaiya M, Rousche PJ, Patton JL, A System for Simultaneous Neural Recording and Spatial Forelimb Tracking During Robot Rehabilitation BMES society.
+
+\ifresume
+\section{\sc Other Projects}
+\job{Tiger compiler}{Jan - Jun 2002}{Florida Institute of Technology}{Melbourne, FL} \\
+I was tasked with creating a Sparc compiler (in Java) for Tiger, a Pascal-style language. In the process of six months, I had to learn Sparc assembly and develop each part of the compiler: the lexer, parser, syntax checking, type checking, instruction selection, register allocation, etc. In the process of doing so, I properly learned the necessity of separating otherwise separate parts of any system, as well as heavy algorithm usage.
+ 
+\job{SwarmLinda}{Oct 2002 - Jun 2003}{Florida Institute of Technology}{Melbourne, FL} \\
+As part of my senior design project, we created a distributed memory system mirroring swarm behavior. In the process we managed multi-threaded servers with multiple TCP/IP connections and resource management of data, and algorithms to prevent network overload.
+\fi
+
+\end{resume}
+\end{document}
